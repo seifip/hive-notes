@@ -15,6 +15,7 @@
       </div>
     </div>
     <Notes/>
+    <div class="text-primary text-right pt-4 px-4">{{ getExtensionVersion() }}</div>
   </div>
 </template>
 
@@ -31,6 +32,10 @@ export default {
     },
     openLinkInNewTab: function (url) {
       chrome.tabs.create({ url })
+    },
+    getExtensionVersion: function () {
+      console.log(chrome.runtime.getManifest())
+      return chrome.runtime.getManifest().version
     }
   },
   components: {
