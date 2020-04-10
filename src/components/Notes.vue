@@ -1,11 +1,25 @@
 <template>
-  <div class="grid grid-cols-1 gap-3">
-    <Note v-for="note in notes" :key="note.id" :importance="1" :type="'info'"/>
+  <div>
+    <div v-if="!loading">
+      <div class="grid grid-cols-1 gap-3">
+        <Note v-for="note in notes" :key="note.id" :importance="1" :type="'info'"/>
+      </div>
+    </div>
+    <div v-else>
+      <SkeletonTheme color="#006064" highlight="#00686b">
+        <div class="grid grid-cols-1 gap-3">
+          <div v-for="n in 4" :key="n">
+            <Skeleton height="125px"/>
+          </div>
+        </div>
+      </SkeletonTheme>
+    </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import { Skeleton, SkeletonTheme } from 'vue-loading-skeleton'
 
 import Note from '@/components/Note'
 
@@ -17,7 +31,9 @@ export default {
     }
   },
   components: {
-    Note
+    Note,
+    Skeleton,
+    SkeletonTheme
   },
   mounted () {
     axios.get(
