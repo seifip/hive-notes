@@ -25,6 +25,7 @@
 </template>
 
 <script>
+import psl from 'psl'
 import axios from 'axios'
 import { Skeleton, SkeletonTheme } from 'vue-loading-skeleton'
 
@@ -70,7 +71,7 @@ export default {
   mounted () {
     chrome.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {
       const url = new URL(tabs[0].url)
-      this.domain = url.hostname
+      this.domain = psl.parse(url.hostname).domain
       this.fetchNotes()
     })
   },
