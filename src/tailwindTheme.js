@@ -4,8 +4,7 @@ const TInput = {
 
 const TButton = {
   baseClass: 'rounded-md border block inline-flex items-center justify-center rounded-full shadow-md',
-  primaryClass: 'text-white bg-primary-light border-primary-light hover:bg-primary-light hover:border-primary-light shadow-md',
-  defaultSizeClass: ''
+  primaryClass: 'text-white bg-primary-light border-primary-light hover:bg-primary-light hover:border-primary-light shadow-md'
 }
 
 const TCard = {

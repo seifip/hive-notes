@@ -7,7 +7,7 @@
       <div>
         <t-button
           variant="primary"
-          class="h-8 w-8 py-0 px-0 flex justify-center"
+          default-size-class="h-8 w-8 py-0 px-0"
           @click="openAirtableForm"
         >
           <font-awesome-icon :icon="['fas', 'plus']" />
