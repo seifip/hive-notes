@@ -7,40 +7,21 @@
       <div>
         <t-button
           variant="primary"
-          default-size-class="h-8 w-8 py-0 px-0"
+          default-size-class="h-8 w-8 py-0 px-0 text-primary-dark"
           @click="openAirtableForm"
         >
           <font-awesome-icon :icon="['fas', 'plus']" />
         </t-button>
       </div>
     </div>
-    <div class="grid grid-cols-1 gap-3">
-      <t-card class="border-l-4 border-red-500">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias sit perspiciatis laboriosam doloribus, aliquam, porro quasi reiciendis.</p>
-        <div class="pt-2 text-primary-light flex justify-between">
-          <div>Sabina</div>
-          <div>2 weeks ago</div>
-        </div>
-      </t-card>
-      <t-card class="border-l-4 border-orange-500">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias sit perspiciatis laboriosam doloribus, aliquam, porro quasi reiciendis.</p>
-        <div class="pt-2 text-primary-light flex justify-between">
-          <div>Sabina</div>
-          <div>2 weeks ago</div>
-        </div>
-      </t-card>
-      <t-card class="border-l-4 border-primary-light">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias sit perspiciatis laboriosam doloribus, aliquam, porro quasi reiciendis.</p>
-        <div class="pt-2 text-primary-light flex justify-between">
-          <div>Sabina</div>
-          <div>2 weeks ago</div>
-        </div>
-      </t-card>
-    </div>
+    <Notes/>
+    <div class="text-primary text-right pt-4 px-4">{{ getExtensionVersion() }}</div>
   </div>
 </template>
 
 <script>
+import Notes from '@/components/Notes'
+
 export default {
   data () {
     return {}
@@ -51,7 +32,14 @@ export default {
     },
     openLinkInNewTab: function (url) {
       chrome.tabs.create({ url })
+    },
+    getExtensionVersion: function () {
+      console.log(chrome.runtime.getManifest())
+      return chrome.runtime.getManifest().version
     }
+  },
+  components: {
+    Notes
   }
 }
 </script>

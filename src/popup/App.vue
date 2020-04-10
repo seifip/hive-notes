@@ -15,11 +15,11 @@
 html {
   width: 400px;
   line-height: 1.15;
-  /* min-height: 400px; */
-  max-height: 500px;
+  min-height: 550px;
+  max-height: 550px;
 }
 
 body {
-  height: 100%;
+  height: 100vh;
 }
 </style>

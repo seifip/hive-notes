@@ -16,10 +16,12 @@ Vue.use(VueTailwind, {
 library.add(faPlus)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
 
+Vue.use(require('vue-moment'))
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
   store,
-  render: h => h(App),
+  render: h => h(App)
 })
