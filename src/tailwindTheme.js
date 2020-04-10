@@ -8,7 +8,8 @@ const TButton = {
 }
 
 const TCard = {
-  baseClass: 'bg-primary rounded shadow-md'
+  baseClass: 'bg-primary rounded shadow-md',
+  bodyClass: 'p-5'
 }
 
 const TailwindTheme = {
