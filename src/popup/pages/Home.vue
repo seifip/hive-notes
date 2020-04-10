@@ -14,9 +14,7 @@
         </t-button>
       </div>
     </div>
-    <div class="grid grid-cols-1 gap-3">
-      <Notes/>
-    </div>
+    <Notes/>
   </div>
 </template>
 
