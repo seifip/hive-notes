@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="flex justify-between py-2 px-4">
+    <div class="flex justify-between py-2 pb-4 px-4">
       <div>
         <h2 class="text-xl font-bold">Notes</h2>
       </div>
@@ -14,7 +14,7 @@
         </t-button>
       </div>
     </div>
-    <div class="grid grid-cols-1 gap-4">
+    <div class="grid grid-cols-1 gap-3">
       <t-card class="border-l-4 border-red-500">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias sit perspiciatis laboriosam doloribus, aliquam, porro quasi reiciendis.</p>
         <div class="pt-2 text-primary-light flex justify-between">

@@ -6,7 +6,6 @@ const purgecss = require('@fullhuman/postcss-purgecss')({
     './src/**/*.vue',
     './src/**/*.jsx',
     './src/tailwindTheme.js'
-    // etc.
   ],
 
   // Include any special characters you're using in this regular expression
