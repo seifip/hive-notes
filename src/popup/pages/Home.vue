@@ -35,8 +35,8 @@ export default {
       chrome.tabs.create({ url })
     }
   },
-  components: [
+  components: {
     Notes
-  ]
+  }
 }
 </script>

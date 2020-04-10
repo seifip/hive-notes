@@ -8,12 +8,11 @@
 import Note from '@/components/Note'
 
 export default {
-  name: 'Notes',
   data () {
     return {}
   },
-  components: [
+  components: {
     Note
-  ]
+  }
 }
 </script>

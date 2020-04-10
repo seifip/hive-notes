@@ -1,9 +1,9 @@
 <template>
   <t-card class="border-l-4"
     :class="[
-      ...(props.importance === 1 ? ['border-red-500'] : []),
-      ...(props.importance === 2 ? ['border-orange-500'] : []),
-      ...(props.importance >= 3 ? ['border-primary-light'] : []),
+      ...(this.importance === 1 ? ['border-red-500'] : []),
+      ...(this.importance === 2 ? ['border-orange-500'] : []),
+      ...(this.importance >= 3 ? ['border-primary-light'] : []),
     ]"
   >
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias sit perspiciatis laboriosam doloribus, aliquam, porro quasi reiciendis.</p>
@@ -16,7 +16,6 @@
 
 <script>
 export default {
-  name: 'Note',
   props: {
     importance: {
       type: Number,
