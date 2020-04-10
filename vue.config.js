@@ -2,17 +2,17 @@ module.exports = {
   pages: {
     'popup/popup': {
       entry: 'src/popup/popup.js',
-      title: 'Popup',
-    },
+      title: 'Alice'
+    }
   },
   pluginOptions: {
     browserExtension: {
       components: {
-        popup: true,
+        popup: true
       },
       api: 'browser',
       usePolyfill: true,
-      autoImportPolyfill: true,
-    },
-  },
-};
+      autoImportPolyfill: true
+    }
+  }
+}

@@ -1,7 +1,7 @@
 module.exports = {
   theme: {
     fontFamily: {
-      'sans': ['Roboto Mono', 'sans-serif']
+      sans: ['Roboto Mono', 'sans-serif']
     },
     extend: {
       colors: {
@@ -14,5 +14,5 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: [],
+  plugins: []
 }
