@@ -1,8 +1,6 @@
 ![Hive Notes](readme/logo.png)
 
-# ⬢ Hive Notes
-
-Hive Notes is an internal company browser extension that lets your team attach notes and warnings to any web page.
+Hive Notes is an internal company browser extension that lets your team attach tips and warnings to any web page.
 
 Notes are store privately in your company Airtable, so you're always in full control of your data.
 
