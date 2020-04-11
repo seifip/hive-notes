@@ -15,13 +15,13 @@
       </div>
     </div>
     <transition name="slide-up" appear>
-      <AddNoteForm/>
+      <NoteForm action="add"/>
     </transition>
   </div>
 </template>
 
 <script>
-import AddNoteForm from '@/components/AddNoteForm'
+import NoteForm from '@/components/NoteForm'
 
 export default {
   data () {
@@ -33,7 +33,7 @@ export default {
     }
   },
   components: {
-    AddNoteForm
+    NoteForm
   }
 }
 </script>
