@@ -42,8 +42,12 @@ export default {
   methods: {
     fetchNotes: function () {
       axios.get(
-        'https://api.airtable.com/v0/' + process.env.VUE_APP_AIRTABLE_BASE + '/Notes?view=Grid%20view',
+        'https://api.airtable.com/v0/' + process.env.VUE_APP_AIRTABLE_BASE + '/Notes',
         {
+          params: {
+            view: 'Extension',
+            filterByFormula: `Domain = "${this.domain}"`
+          },
           headers: {
             Accept: 'application/json',
             Authorization: 'Bearer ' + process.env.VUE_APP_AIRTABLE_API_KEY
@@ -51,17 +55,7 @@ export default {
         }
       )
         .then(res => {
-          const allNotes = res.data.records
-          const filteredNotes = allNotes.filter(note => note.fields.Domain[0] === this.domain)
-          this.notes = filteredNotes.sort(function (a, b) {
-            if (a.fields.Priority < b.fields.Priority) {
-              return -1
-            }
-            if (a.fields.Priority > b.fields.Priority) {
-              return 1
-            }
-            return 0
-          })
+          this.notes = res.data.records
           this.loading = false
         }).catch(function (error) {
           console.log(error)
