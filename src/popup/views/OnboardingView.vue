@@ -4,8 +4,8 @@
       <div>
         <div class="flex justify-start py-2 pb-6 px-2">
           <div>
-            <h2 class="text-xl font-bold">Hey there!</h2>
-            <h3 class="text-lg font-bold text-primary-light pt-2">To start sharing notes with your team, please enter the email associated with your Airtable account.</h3>
+            <h2 class="text-xl font-bold">Enter the Hive</h2>
+            <h3 class="text-lg font-bold text-primary-light pt-2">To share notes with your team, set your Airtable account email.</h3>
           </div>
         </div>
         <div>
