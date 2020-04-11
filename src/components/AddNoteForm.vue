@@ -8,7 +8,7 @@
       <h3 class="font-bold pt-4 pb-2 px-2 text-primary-light">Note</h3>
       <t-textarea v-model="fields.Note" name="note" placeholder="Your note"/>
     </div>
-    <div class="flex justify-end pt-5 pb-4 px-4">
+    <div class="flex justify-end pt-5 pb-4 px-2">
       <div>
         <t-button
           variant="primary"

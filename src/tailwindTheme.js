@@ -27,12 +27,19 @@ const TSelect = {
   defaultStatusClass: 'bg-transparent border-primary'
 }
 
+const TDropdown = {
+  baseClass: '',
+  dropdownClass: 'w-40 bg-primary-light rounded border border-primary-light shadow-md z-10',
+  disabledClass: ''
+}
+
 const TailwindTheme = {
   TInput,
   TButton,
   TCard,
   TTextarea,
-  TSelect
+  TSelect,
+  TDropdown
 }
 
 export default TailwindTheme

@@ -1,9 +1,7 @@
 <template>
-  <span>
-    <div class="container px-4 py-4 h-full bg-primary-dark text-white font-sans">
-      <router-view class="h-full"></router-view>
-    </div>
-  </span>
+  <div class="container px-4 py-4 h-full bg-primary-dark text-white font-sans">
+    <router-view class="h-full"></router-view>
+  </div>
 </template>
 
 <script>
@@ -19,7 +17,10 @@ html
   max-height: 550px
 
 body
-  height: 100vh
+  min-height: 100vh
+
+.container
+  min-height: 100vh
 
 /* Router transitions */
 .fade-enter-active, .fade-leave-active

@@ -5,11 +5,14 @@
         <Note
           v-for="note in notes"
           :key="note.id"
+          :id="note.id"
           :priority="Number(note.fields.Priority)"
           :type="note.fields.Type"
           :note="note.fields.Note"
           :author="note.fields.Author"
-          :modified="note.fields.Modified"/>
+          :modified="note.fields.Modified"
+          @deleteNote="deleteNote(note.id)"
+        />
       </div>
     </div>
     <div v-else>
@@ -57,6 +60,21 @@ export default {
         .then(res => {
           this.notes = res.data.records
           this.loading = false
+        }).catch(function (error) {
+          console.log(error)
+        })
+    },
+    deleteNote: function (noteId) {
+      axios.delete(
+        'https://api.airtable.com/v0/' + process.env.VUE_APP_AIRTABLE_BASE + '/Notes/' + noteId,
+        {
+          headers: {
+            Authorization: 'Bearer ' + process.env.VUE_APP_AIRTABLE_API_KEY
+          }
+        }
+      )
+        .then(res => {
+          this.fetchNotes()
         }).catch(function (error) {
           console.log(error)
         })
