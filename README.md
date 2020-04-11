@@ -6,9 +6,9 @@ Notes are stored in your own company Airtable, so you're always in control of yo
 
 # Screenshots
 
-![Hive Notes Chrome Extension](readme/screenshot-1.png)
+![Hive Notes Chrome Extension](readme/screenshot-extension.png)
 
-![Hive Notes Airtable](readme/screenshot-2.png)
+![Hive Notes Airtable](readme/screenshot-airtable.png)
 
 # Use cases
 
