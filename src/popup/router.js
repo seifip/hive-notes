@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from './pages/Home.vue'
+import HomeView from './views/HomeView.vue'
+import AddNoteView from './views/AddNoteView.vue'
 
 Vue.use(VueRouter)
 const router = new VueRouter({
@@ -8,7 +9,12 @@ const router = new VueRouter({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: HomeView
+    },
+    {
+      path: '/add-note',
+      name: 'add-note',
+      component: AddNoteView
     }
   ]
 })
