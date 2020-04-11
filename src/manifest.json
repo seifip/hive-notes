@@ -1,7 +1,6 @@
 {
   "manifest_version": 2,
   "name": "Alice",
-  "version": "0.1.4",
   "homepage_url": "http://localhost/",
   "description": "Shared team notes tied to domains.",
   "icons": {
