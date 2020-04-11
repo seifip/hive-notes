@@ -54,7 +54,7 @@ export default {
         Type: airtableMeta.noteTypes[0],
         Note: '',
         Author: {
-          email: 'seifip@gmail.com'
+          email: this.$store.state.user.airtableEmail
         },
         Priority: airtableMeta.notePriorities[0].value,
         Domain: ''
@@ -98,7 +98,7 @@ export default {
             Type: this.fields.Type,
             Note: this.fields.Note,
             Author: {
-              id: this.fields.Author.id
+              email: this.$store.state.user.airtableEmail
             },
             Priority: this.fields.Priority
           }

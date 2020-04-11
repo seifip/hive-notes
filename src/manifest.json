@@ -20,5 +20,5 @@
       "64": "icons/64.png"
     }
   },
-  "permissions": ["tabs"]
+  "permissions": ["tabs", "storage"]
 }
