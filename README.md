@@ -8,7 +8,7 @@ Notes are store privately in your company Airtable, so you're always in full con
 
 ![Hive Notes Chrome Extension](readme/screenshot-1.png)
 
-![Hive Notes Airtable](readme/screenshot-1.png)
+![Hive Notes Airtable](readme/screenshot-2.png)
 
 # Use cases
 
