@@ -1,4 +1,4 @@
-# Hive Notes
+# ⬢ Hive Notes
 
 Hive Notes is an internal company browser extension that lets your team attach notes and warnings to any web page.
 
