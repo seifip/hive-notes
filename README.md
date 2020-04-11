@@ -14,7 +14,7 @@ Notes are stored in your own company Airtable, so you're always in control of yo
 
 This extension was originally created for the buying team at [White Rabbit Express](https://www.whiterabbitexpress.com/), but it's invaluable for any group or organization repeatedly interacting with different websites.
 
-# How to use
+# How to use Hive with my team
 1. Go to https://airtable.com/shr1dxKNQusW47dRP and click `Copy base` in the top-right corner.
 2. Clone this repository, copy the `.env.example` file in the root folder, and rename it to `.env`.
 3. [Find your Airtable API and Base ID](https://help.grow.com/hc/en-us/articles/360015095834-Airtable) and update them in the `.env` file. 
