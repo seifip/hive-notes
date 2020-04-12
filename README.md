@@ -21,3 +21,12 @@ This extension was originally created for the buying team at [White Rabbit Expre
 4. Run `yarn` and `yarn build` in the root folder. A new zip file will be bundled in the `artifacts` folder.
 5. Publish the zip bundle to the [Chrome Web Store as an **Unlisted** extension](https://support.google.com/chrome/a/answer/2714278?hl=en).
 6. Invite team members to your Hive Airtable base, and send them your private link to the extension.
+
+# Changelog
+## 0.3.0
+- The icon now changes colours based on notes attached to the current page. Gray if there are no notes yet, teal if there are notes attached, and red if there's at least one note with a Warning (1) Priority.
+
+![Hive icon - No notes](public/icons/48.png) ![Hive icon - Notes](public/icons/48-on.png) ![Hive icon - Warning note](public/icons/48-warning.png)
+
+## 0.2.0
+- You can now add, delete and edit notes from within the extension, rather than through an Airtable form.
