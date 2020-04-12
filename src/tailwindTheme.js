@@ -11,8 +11,8 @@ const TCard = {
 }
 
 const TInput = {
-  baseClass: 'border block w-full rounded bg-primary-dark border-primary',
-  defaultStatusClass: 'bg-primary-light border-primary',
+  baseClass: 'border block w-full rounded bg-primary-dark border-primary text-white',
+  defaultStatusClass: '',
   errorStatusClass: 'border-red-300 bg-red-100',
   warningStatusClass: 'border-yellow-400 bg-yellow-100',
   successStatusClass: 'border-green-300 bg-green-100',
@@ -23,8 +23,8 @@ const TInput = {
 }
 
 const TTextarea = {
-  baseClass: 'border block w-full rounded bg-transparent border-primary',
-  defaultStatusClass: 'bg-primary-light border-primary',
+  baseClass: 'border block w-full rounded bg-primary-dark border-primary text-white',
+  defaultStatusClass: '',
   errorStatusClass: 'border-red-300 bg-red-100',
   warningStatusClass: 'border-yellow-400 bg-yellow-100',
   successStatusClass: 'border-green-300 bg-green-100',
