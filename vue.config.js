@@ -2,11 +2,16 @@ module.exports = {
   pages: {
     'popup/popup': {
       entry: 'src/popup/popup.js',
-      title: 'Alice'
+      title: 'Hive'
     }
   },
   pluginOptions: {
     browserExtension: {
+      componentOptions: {
+        background: {
+          entry: 'src/background.js'
+        }
+      },
       components: {
         popup: true
       },

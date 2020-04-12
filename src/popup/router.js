@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import store from './store.js'
+import store from '../store.js'
 import HomeView from './views/HomeView.vue'
 import AddNoteView from './views/AddNoteView.vue'
 import EditNoteView from './views/EditNoteView.vue'
