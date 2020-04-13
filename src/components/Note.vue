@@ -44,7 +44,7 @@
             </li>
           </ul>
         </t-dropdown>
-        <span class="font-bold">{{ getFirstEmoji(type) }}</span> {{ note }}
+        <markdown-it-vue :content="getFirstEmoji(type) + ' ' + note" />
       </p>
       <div class="pt-3 text-primary-light flex justify-between">
         <div><a @click="openLinkInNewTab('mailto:' + author.email)" href="#">{{ author.name }}</a></div>
@@ -62,6 +62,7 @@
 </template>
 
 <script>
+import MarkdownItVue from 'markdown-it-vue'
 import { Skeleton, SkeletonTheme } from 'vue-loading-skeleton'
 
 export default {
@@ -110,6 +111,7 @@ export default {
     }
   },
   components: {
+    MarkdownItVue,
     Skeleton,
     SkeletonTheme
   }

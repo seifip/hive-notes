@@ -23,6 +23,9 @@ This extension was originally created for the buying team at [White Rabbit Expre
 6. Invite team members to your Hive Airtable base, and send them your private link to the extension.
 
 # Changelog
+## 0.4.0
+- Added Markdown support
+
 ## 0.3.0
 - The icon now changes colours based on notes attached to the current page. Gray if there are no notes yet, teal if there are notes attached, and red if there's at least one note with a Warning (1) Priority.
 
