@@ -39,13 +39,14 @@ export default {
     return {
       domain: undefined,
       notes: [],
-      loading: true
+      loading: true,
+      airtableCredentials: {}
     }
   },
   methods: {
     fetchNotes: function () {
       axios.get(
-        'https://api.airtable.com/v0/' + process.env.VUE_APP_AIRTABLE_BASE + '/Notes',
+        'https://api.airtable.com/v0/' + this.airtableCredentials.baseId + '/Notes',
         {
           params: {
             view: 'Extension',
@@ -53,7 +54,7 @@ export default {
           },
           headers: {
             Accept: 'application/json',
-            Authorization: 'Bearer ' + process.env.VUE_APP_AIRTABLE_API_KEY
+            Authorization: 'Bearer ' + this.airtableCredentials.apiKey
           }
         }
       )
@@ -66,10 +67,10 @@ export default {
     },
     deleteNote: function (noteId) {
       axios.delete(
-        'https://api.airtable.com/v0/' + process.env.VUE_APP_AIRTABLE_BASE + '/Notes/' + noteId,
+        'https://api.airtable.com/v0/' + this.airtableCredentials.baseId + '/Notes/' + noteId,
         {
           headers: {
-            Authorization: 'Bearer ' + process.env.VUE_APP_AIRTABLE_API_KEY
+            Authorization: 'Bearer ' + this.airtableCredentials.apiKey
           }
         }
       )
@@ -84,7 +85,10 @@ export default {
     chrome.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {
       const url = new URL(tabs[0].url)
       this.domain = psl.parse(url.hostname).domain
-      this.fetchNotes()
+      chrome.storage.sync.get(['airtableCredentials'], (res) => {
+        this.airtableCredentials = res.airtableCredentials
+        this.fetchNotes()
+      })
     })
   },
   components: {

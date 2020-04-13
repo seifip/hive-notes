@@ -38,11 +38,11 @@ export default {
     },
     fetchNote: function (noteId) {
       axios.get(
-        'https://api.airtable.com/v0/' + process.env.VUE_APP_AIRTABLE_BASE + '/Notes/' + noteId,
+        'https://api.airtable.com/v0/' + this.airtableCredentials.baseId + '/Notes/' + noteId,
         {
           headers: {
             Accept: 'application/json',
-            Authorization: 'Bearer ' + process.env.VUE_APP_AIRTABLE_API_KEY
+            Authorization: 'Bearer ' + this.airtableCredentials.apiKey
           }
         }
       )
@@ -55,7 +55,10 @@ export default {
     }
   },
   mounted () {
-    this.fetchNote(this.$route.params.id)
+    chrome.storage.sync.get(['airtableCredentials'], (res) => {
+      this.airtableCredentials = res.airtableCredentials
+      this.fetchNote(this.$route.params.id)
+    })
   },
   components: {
     NoteForm

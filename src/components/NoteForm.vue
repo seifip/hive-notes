@@ -54,11 +54,12 @@ export default {
         Type: airtableMeta.noteTypes[0],
         Note: '',
         Author: {
-          email: this.$store.state.user.airtableEmail
+          email: ''
         },
         Priority: airtableMeta.notePriorities[0].value,
         Domain: ''
       },
+      airtableCredentials: {},
       airtableMeta: airtableMeta,
       loading: true
     }
@@ -69,7 +70,7 @@ export default {
         return
       }
       axios.post(
-        'https://api.airtable.com/v0/' + process.env.VUE_APP_AIRTABLE_BASE + '/Notes',
+        'https://api.airtable.com/v0/' + this.airtableCredentials.baseId + '/Notes',
         {
           records: [
             {
@@ -80,7 +81,7 @@ export default {
         {
           headers: {
             'Content-Type': 'application/json',
-            Authorization: 'Bearer ' + process.env.VUE_APP_AIRTABLE_API_KEY
+            Authorization: 'Bearer ' + this.airtableCredentials.apiKey
           }
         }
       )
@@ -92,13 +93,13 @@ export default {
     },
     updateNote: function () {
       axios.patch(
-        'https://api.airtable.com/v0/' + process.env.VUE_APP_AIRTABLE_BASE + '/Notes/' + this.$route.params.id,
+        'https://api.airtable.com/v0/' + this.airtableCredentials.baseId + '/Notes/' + this.$route.params.id,
         {
           fields: {
             Type: this.fields.Type,
             Note: this.fields.Note,
             Author: {
-              email: this.$store.state.user.airtableEmail
+              email: this.airtableCredentials.email
             },
             Priority: this.fields.Priority
           }
@@ -106,7 +107,7 @@ export default {
         {
           headers: {
             'Content-Type': 'application/json',
-            Authorization: 'Bearer ' + process.env.VUE_APP_AIRTABLE_API_KEY
+            Authorization: 'Bearer ' + this.airtableCredentials.apiKey
           }
         }
       )
@@ -118,17 +119,21 @@ export default {
     }
   },
   mounted () {
-    if (this.action === 'add') {
-      chrome.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {
-        const url = new URL(tabs[0].url)
-        this.fields.Domain = psl.parse(url.hostname).domain
+    chrome.storage.sync.get(['airtableCredentials'], (res) => {
+      this.airtableCredentials = res.airtableCredentials
+      if (this.action === 'add') {
+        chrome.tabs.query({ active: true, lastFocusedWindow: true }, (tabs) => {
+          const url = new URL(tabs[0].url)
+          this.fields.Domain = psl.parse(url.hostname).domain
+          this.fields.Author.email = this.airtableCredentials.email
+          this.loading = false
+        })
+      } else {
+        this.fields = this.currentFields
         this.loading = false
-      })
-    } else {
-      this.fields = this.currentFields
-      this.loading = false
-    }
-    document.getElementById('noteType').focus()
+      }
+      document.getElementById('noteType').focus()
+    })
   }
 }
 </script>

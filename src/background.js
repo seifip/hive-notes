@@ -10,35 +10,37 @@ function updateIcon (icon) {
 }
 
 function fetchNoteCount (tabUrl) {
-  const url = new URL(tabUrl)
-  const domain = psl.parse(url.hostname).domain
+  chrome.storage.sync.get(['airtableCredentials'], (res) => {
+    const url = new URL(tabUrl)
+    const domain = psl.parse(url.hostname).domain
 
-  axios.get(
-    'https://api.airtable.com/v0/' + process.env.VUE_APP_AIRTABLE_BASE + '/Notes',
-    {
-      params: {
-        view: 'Extension',
-        fields: ['Priority'],
-        filterByFormula: `Domain = "${domain}"`
-      },
-      headers: {
-        Accept: 'application/json',
-        Authorization: 'Bearer ' + process.env.VUE_APP_AIRTABLE_API_KEY
+    axios.get(
+      'https://api.airtable.com/v0/' + res.airtableCredentials.baseId + '/Notes',
+      {
+        params: {
+          view: 'Extension',
+          fields: ['Priority'],
+          filterByFormula: `Domain = "${domain}"`
+        },
+        headers: {
+          Accept: 'application/json',
+          Authorization: 'Bearer ' + res.airtableCredentials.apiKey
+        }
       }
-    }
-  )
-    .then(res => {
-      if (res.data.records.length === 0) {
-        updateIcon('48')
-      } else if (res.data.records.find(el => el.fields.Priority === '1')) {
-        updateIcon('48-warning')
-      } else {
-        updateIcon('48-on')
-      }
-      this.loading = false
-    }).catch(function (error) {
-      console.log(error)
-    })
+    )
+      .then(res => {
+        if (res.data.records.length === 0) {
+          updateIcon('48')
+        } else if (res.data.records.find(el => el.fields.Priority === '1')) {
+          updateIcon('48-warning')
+        } else {
+          updateIcon('48-on')
+        }
+        this.loading = false
+      }).catch(function (error) {
+        console.log(error)
+      })
+  })
 }
 
 chrome.tabs.onActivated.addListener(function (activeInfo) {

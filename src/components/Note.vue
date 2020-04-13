@@ -13,7 +13,7 @@
         <t-dropdown
           variant="primary"
           trigger="hover"
-          visible-arrow="false"
+          :visible-arrow="false"
           class="note-menu"
           :button-props="{
             baseClass: 'bg-primary text-primary-light hover:bg-primary hover:text-white',

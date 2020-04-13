@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import store from '../store.js'
 import HomeView from './views/HomeView.vue'
 import AddNoteView from './views/AddNoteView.vue'
 import EditNoteView from './views/EditNoteView.vue'
@@ -35,13 +34,10 @@ const router = new VueRouter({
 
 // Redirect user to Onboarding if Airtable email not set
 router.beforeEach((to, from, next) => {
-  chrome.storage.sync.get('userAirtableEmail', (res) => {
-    if (to.name !== 'onboarding' && !res.userAirtableEmail) {
+  chrome.storage.sync.get(['airtableCredentials'], (res) => {
+    if (to.name !== 'onboarding' && !res.airtableCredentials) {
       next({ name: 'onboarding' })
     } else {
-      if (res.userAirtableEmail) {
-        store.commit('updateUserAirtableEmail', res.userAirtableEmail)
-      }
       next()
     }
   })
