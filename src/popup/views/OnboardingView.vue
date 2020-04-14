@@ -9,12 +9,18 @@
           </div>
         </div>
         <div>
-          <h3 class="font-bold pt-2 pb-2 px-2 text-primary-light">Airtable email</h3>
-          <t-input v-model="fields.airtableCredentials.email" name="note" placeholder="Airtable email"/>
-          <h3 class="font-bold pt-2 pb-2 px-2 text-primary-light">API Key</h3>
-          <t-input v-model="fields.airtableCredentials.apiKey" name="note" placeholder="keyXXXXXXXXXXXXXX"/>
-          <h3 class="font-bold pt-2 pb-2 px-2 text-primary-light">Base ID</h3>
-          <t-input v-model="fields.airtableCredentials.baseId" name="note" placeholder="appXXXXXXXXXXXXXX"/>
+          <div>
+            <h3 class="font-bold pt-2 pb-2 px-2 text-primary-light">Airtable email</h3>
+            <t-input v-model="fields.airtableCredentials.email" name="note" placeholder="Airtable email"/>
+          </div>
+          <div v-if="!envApiKey">
+            <h3 class="font-bold pt-2 pb-2 px-2 text-primary-light">API Key</h3>
+            <t-input v-model="fields.airtableCredentials.apiKey" name="note" placeholder="keyXXXXXXXXXXXXXX"/>
+          </div>
+          <div v-if="!envBaseId">
+            <h3 class="font-bold pt-2 pb-2 px-2 text-primary-light">Base ID</h3>
+            <t-input v-model="fields.airtableCredentials.baseId" name="note" placeholder="appXXXXXXXXXXXXXX"/>
+          </div>
         </div>
         <div class="flex justify-end pt-5 pb-4 px-2">
           <div>
@@ -39,10 +45,12 @@ export default {
       fields: {
         airtableCredentials: {
           email: '',
-          apiKey: '',
-          baseId: ''
+          apiKey: process.env.VUE_APP_AIRTABLE_API_KEY || '',
+          baseId: process.env.VUE_APP_AIRTABLE_BASE || ''
         }
-      }
+      },
+      envApiKey: process.env.VUE_APP_AIRTABLE_API_KEY,
+      envBaseId: process.env.VUE_APP_AIRTABLE_BASE
     }
   },
   methods: {
