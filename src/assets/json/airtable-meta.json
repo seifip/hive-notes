@@ -1,11 +1,7 @@
 {
-  "noteTypes": [
-    "💡Tip",
-    "📦Shipping",
-    "💸Fees"
-  ],
   "notePriorities": [
-    { "value": "3", "text": "📄Note" },
-    { "value": "1", "text": "🚨Warning" }
+    { "value": "3", "text": "⚪ Note" },
+    { "value": "2", "text": "🟡 Warning" },
+    { "value": "1", "text": "🔴 Alert" }
   ]
 }

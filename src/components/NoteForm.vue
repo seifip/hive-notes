@@ -1,12 +1,10 @@
 <template>
   <div>
     <div>
-      <h3 class="font-bold pt-2 pb-2 px-2 text-primary-light">Type</h3>
-      <t-select v-model="fields.Type" :options="airtableMeta.noteTypes" id="noteType"/>
+      <h3 class="font-bold pt-4 pb-2 px-2 text-primary-light">Note</h3>
+      <t-textarea v-model="fields.Note" name="note" placeholder="It's just your Hive talkin'" rows="7" id="notePriority"/>
       <h3 class="font-bold pt-4 pb-2 px-2 text-primary-light">Priority</h3>
       <t-select v-model="fields.Priority" :options="airtableMeta.notePriorities" />
-      <h3 class="font-bold pt-4 pb-2 px-2 text-primary-light">Note</h3>
-      <t-textarea v-model="fields.Note" name="note" placeholder="Your note"/>
     </div>
     <div class="flex justify-end pt-5 pb-4 px-2">
       <div>
@@ -51,7 +49,6 @@ export default {
   data () {
     return {
       fields: {
-        Type: airtableMeta.noteTypes[0],
         Note: '',
         Author: {
           email: ''
@@ -96,7 +93,6 @@ export default {
         'https://api.airtable.com/v0/' + this.airtableCredentials.baseId + '/Notes/' + this.$route.params.id,
         {
           fields: {
-            Type: this.fields.Type,
             Note: this.fields.Note,
             Author: {
               email: this.airtableCredentials.email
@@ -132,7 +128,7 @@ export default {
         this.fields = this.currentFields
         this.loading = false
       }
-      document.getElementById('noteType').focus()
+      document.getElementById('notePriority').focus()
     })
   }
 }

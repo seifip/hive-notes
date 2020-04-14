@@ -7,7 +7,6 @@
           :key="note.id"
           :id="note.id"
           :priority="Number(note.fields.Priority)"
-          :type="note.fields.Type"
           :note="note.fields.Note"
           :author="note.fields.Author"
           :modified="note.fields.Modified"
