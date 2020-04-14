@@ -21,7 +21,7 @@ This extension was originally created for the buying team at [White Rabbit Expre
 
 # Changelog
 ### 0.5.0
-- Hive now asks for your Airtable API Key and Base ID during onboarding, instead of pulling them from an .env file.
+- Hive now asks for your Airtable API Key and Base ID during onboarding if they're not set in the .env file.
 
 ### 0.4.0
 - Added Markdown support
