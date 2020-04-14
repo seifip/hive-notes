@@ -8,7 +8,7 @@
 </script>
 
 <style lang="sass">
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap")
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap")
 
 html
   width: 400px
