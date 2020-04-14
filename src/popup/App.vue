@@ -22,7 +22,47 @@ body
 .container
   min-height: 100vh
 
-/* Router transitions */
+/* MARKDOWN */
+/* Global */
+.markdown-body
+  @apply leading-relaxed
+
+/* Headers */
+.markdown-body h1
+  @apply text-lg mt-3 font-bold
+.markdown-body h2
+  @apply mt-2 uppercase font-bold
+
+/* Links */
+.markdown-body a
+  @apply underline
+.markdown-body a:hover
+  @apply font-bold
+
+/* Paragraph */
+.markdown-body p
+  @apply mb-4
+
+/* Lists */
+.markdown-body ul,
+.markdown-body ol
+  @apply my-1 ml-4
+.markdown-body li > p,
+.markdown-body li > ul,
+.markdown-body li > ol
+  @apply mb-0
+.markdown-body ol
+  @apply list-decimal
+.markdown-body ul
+  @apply list-disc
+
+/* Blockquotes */
+.markdown-body blockquote
+  @apply italic border-l-2 pl-2 my-1
+.markdown-body blockquote > p
+  @apply mb-0
+
+/* TRANSITIONS */
 .fade-enter-active, .fade-leave-active
   transition: opacity .5s
 .fade-enter, .fade-leave-to
