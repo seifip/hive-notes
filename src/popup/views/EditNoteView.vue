@@ -7,7 +7,7 @@
       <div>
         <t-button
           variant="primary"
-          default-size-class="h-8 w-8 py-0 px-0"
+          default-size-class="h-8 w-8 py-0 px-0 bg-primary border-primary"
           to="/"
         >
           <font-awesome-icon :icon="['fas', 'arrow-left']" />

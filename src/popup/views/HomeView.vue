@@ -7,7 +7,14 @@
       <div>
         <t-button
           variant="primary"
-          default-size-class="h-8 w-8 py-0 px-0 text-primary-dark"
+          default-size-class="h-8 w-8 py-0 px-0 bg-primary border-primary mr-3"
+          to="/settings"
+        >
+          <font-awesome-icon :icon="['fas', 'cog']" />
+        </t-button>
+        <t-button
+          variant="primary"
+          default-size-class="h-8 w-8 py-0 px-0"
           to="/add-note"
         >
           <font-awesome-icon :icon="['fas', 'plus']" />

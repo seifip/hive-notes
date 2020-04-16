@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <h3 class="font-bold pt-4 pb-2 px-2 text-primary-light">Note</h3>
+      <h3 class="font-bold pb-2 px-2 text-primary-light">Note</h3>
       <t-textarea v-model="fields.Note" name="note" placeholder="It's just your Hive talkin'" rows="7" id="notePriority"/>
       <h3 class="font-bold pt-4 pb-2 px-2 text-primary-light">Priority</h3>
       <t-select v-model="fields.Priority" :options="airtableMeta.notePriorities" />
