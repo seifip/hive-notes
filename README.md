@@ -22,7 +22,10 @@ This extension was originally created for the buying team at [White Rabbit Expre
 3. Set your Airtable API Key and Base ID in the extension.
 4. Invite team members to your Hive Airtable base, and set up their extensions with the same Base ID.
 
-Note: Instead of step (1), you can also publish the zip in the [artifacts](artifacts) folder to the [Chrome Web Store as an **Unlisted** extension](https://support.google.com/chrome/a/answer/2714278?hl=en).
+# Customize and deploy internally
+1. Rename `.env.example` to `.env` and replace the Airtable API Key and Base ID inside.
+2. Run `yarn` and `yarn build` in the root folder.
+3. Publish the newly generated zip in the [artifacts](artifacts) folder to the [Chrome Web Store as an **Unlisted** extension](https://support.google.com/chrome/a/answer/2714278?hl=en).
 
 # Changelog
 ### 0.7
