@@ -4,8 +4,6 @@ Notes are stored in your own company Airtable, so you're always in control of yo
 
 ## [Get from Chrome Web Store](https://chrome.google.com/webstore/detail/geonjpedhdlahodmcacapmbgkckaknmm/)
 
-# Screenshots
-
 ![Hive Notes Chrome Extension](readme/screenshot-1.png)
 
 ![Hive Notes Settings](readme/screenshot-2.png)
