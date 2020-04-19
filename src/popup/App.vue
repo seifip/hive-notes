@@ -1,6 +1,6 @@
 <template>
   <div class="container px-4 py-4 h-full bg-primary-dark text-white font-sans">
-    <router-view class="h-full"></router-view>
+    <router-view class="h-full" />
   </div>
 </template>
 
@@ -21,6 +21,9 @@ body
 
 .container
   min-height: 100vh
+
+a
+  @apply underline
 
 /* MARKDOWN */
 /* Global */

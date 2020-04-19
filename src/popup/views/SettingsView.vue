@@ -3,6 +3,13 @@
     <div class="flex justify-between py-2 pb-4 px-2">
       <div>
         <h2 class="text-xl font-bold">Settings</h2>
+        <h3 class="text-lg font-bold text-primary-light pt-2">
+        <a
+          class="text-sm font-normal underline"
+          href="#"
+          @click="openOptionsTab()"
+        >Detailed instructions</a>
+      </h3>
       </div>
       <div>
         <t-button
@@ -26,6 +33,11 @@ import SettingsForm from '@/components/SettingsForm'
 export default {
   components: {
     SettingsForm
+  },
+  methods: {
+    openOptionsTab: function (url) {
+      chrome.runtime.openOptionsPage()
+    }
   }
 }
 </script>

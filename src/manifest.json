@@ -4,17 +4,28 @@
   "homepage_url": "https://www.seifi.co/",
   "description": "Team notes on web pages, stored in your company Airtable.",
   "icons": {
-    "48": "icons/48.png",
-    "128": "icons/128.png"
+    "48": "icons/48-on.png",
+    "128": "icons/128-on.png"
   },
   "browser_action": {
     "default_popup": "popup/popup.html",
-    "default_title": "Hive Notes"
+    "default_title": "Hive Notes",
+    "default_icon": {
+      "48": "icons/48.png",
+      "128": "icons/128.png"
+    }
   },
   "background": {
     "scripts": [
       "js/background.js"
     ]
   },
-  "permissions": ["tabs", "storage"]
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "permissions": [
+    "tabs",
+    "storage"
+  ]
 }

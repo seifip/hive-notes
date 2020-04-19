@@ -1,13 +1,13 @@
 const TButton = {
   baseClass: 'rounded-md border block inline-flex items-center justify-center rounded-full shadow-md text-primary-dark font-bold',
-  primaryClass: 'text-white bg-primary-light border-primary-light hover:bg-primary hover:border-primary hover:text-white'
+  primaryClass: 'text-white bg-primary-light border-primary-light hover:bg-primary hover:border-primary hover:text-white',
 }
 
 const TCard = {
   baseClass: 'bg-primary rounded shadow-md',
   headerClass: 'px-6 py-3 text-xl border-b',
   bodyClass: 'p-5',
-  footerClass: 'px-6 py-3 border-t'
+  footerClass: 'px-6 py-3 border-t',
 }
 
 const TInput = {
@@ -19,7 +19,7 @@ const TInput = {
   disabledClass: 'bg-gray-100 cursor-not-allowed opacity-75',
   defaultSizeClass: 'p-3',
   largeSizeClass: 'p-4 text-lg',
-  smallSizeClass: 'p-2 text-sm'
+  smallSizeClass: 'p-2 text-sm',
 }
 
 const TTextarea = {
@@ -31,7 +31,7 @@ const TTextarea = {
   disabledClass: 'bg-gray-100 cursor-not-allowed opacity-75',
   defaultSizeClass: 'p-3',
   largeSizeClass: 'p-4 text-lg',
-  smallSizeClass: 'p-2 text-sm'
+  smallSizeClass: 'p-2 text-sm',
 }
 
 const TSelect = {
@@ -47,13 +47,13 @@ const TSelect = {
   smallSizeClass: 'p-2 text-sm',
   wrapperClass: 'relative',
   arrowWrapperClass: 'pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700',
-  arrowClass: 'fill-current h-4 w-4'
+  arrowClass: 'fill-current h-4 w-4',
 }
 
 const TDropdown = {
   baseClass: '',
   dropdownClass: 'w-40 bg-primary-light rounded border border-primary-light shadow-md z-10',
-  disabledClass: ''
+  disabledClass: '',
 }
 
 const TailwindTheme = {
@@ -62,7 +62,7 @@ const TailwindTheme = {
   TInput,
   TTextarea,
   TSelect,
-  TDropdown
+  TDropdown,
 }
 
 export default TailwindTheme

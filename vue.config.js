@@ -3,6 +3,10 @@ module.exports = {
     'popup/popup': {
       entry: 'src/popup/popup.js',
       title: 'Hive'
+    },
+    'options/options': {
+      entry: 'src/options/options.js',
+      title: 'Hive Options'
     }
   },
   pluginOptions: {
@@ -10,10 +14,14 @@ module.exports = {
       componentOptions: {
         background: {
           entry: 'src/background.js'
+        },
+        options: {
+          entry: 'src/options.js'
         }
       },
       components: {
-        popup: true
+        popup: true,
+        options: true
       },
       api: 'browser',
       usePolyfill: true,

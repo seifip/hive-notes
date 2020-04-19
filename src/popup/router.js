@@ -13,29 +13,29 @@ const router = new VueRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
     },
     {
       path: '/onboarding',
       name: 'onboarding',
-      component: OnboardingView
+      component: OnboardingView,
     },
     {
       path: '/settings',
       name: 'settings',
-      component: SettingsView
+      component: SettingsView,
     },
     {
       path: '/add-note',
       name: 'add-note',
-      component: AddNoteView
+      component: AddNoteView,
     },
     {
       path: '/edit-note/:id',
       name: 'edit-note',
-      component: EditNoteView
-    }
-  ]
+      component: EditNoteView,
+    },
+  ],
 })
 
 // Redirect user to Onboarding if Airtable email not set
