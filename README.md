@@ -4,6 +4,8 @@ Hive is an internal company browser extension that lets your team attach tips an
 
 Notes are stored in your own company Airtable, so you're always in control of your data.
 
+## [Get from Chrome Web Store](https://chrome.google.com/webstore/detail/geonjpedhdlahodmcacapmbgkckaknmm/)
+
 # Screenshots
 
 ![Hive Notes Chrome Extension](readme/screenshot-extension.png)
@@ -17,12 +19,15 @@ This extension was originally created for the buying team at [White Rabbit Expre
 # Use Hive with your team
 1. Install the extension from https://chrome.google.com/webstore/detail/geonjpedhdlahodmcacapmbgkckaknmm/
 2. Go to https://airtable.com/shr1dxKNQusW47dRP and click `Copy base` in the top-right corner.
-3. Set your Airtable API Key and Base ID in the extension popup (https://docs.thunkable.com/spreadsheet#connect-your-airtable-base-with-thunkable)
+3. Set your Airtable API Key and Base ID in the extension.
 4. Invite team members to your Hive Airtable base, and set up their extensions with the same Base ID.
 
 Note: Instead of step (1), you can also publish the zip in the [artifacts](artifacts) folder to the [Chrome Web Store as an **Unlisted** extension](https://support.google.com/chrome/a/answer/2714278?hl=en).
 
 # Changelog
+### 0.7
+- Options tab with detailed onboarding instructions.
+
 ### 0.6
 - Added a Settings page where users can change their Airtable email, API Key and Base ID.
 
