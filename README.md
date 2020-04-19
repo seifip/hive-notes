@@ -42,5 +42,5 @@ Note: Instead of step (1), you can also publish the zip in the [artifacts](artif
 
 ![Hive icon - No notes](public/icons/48.png) ![Hive icon - Notes](public/icons/48-on.png) ![Hive icon - Warning note](public/icons/48-warning.png)
 
-### 0.2.0
+### 0.2
 - You can now add, delete and edit notes from within the extension, rather than through an Airtable form.
